@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บริษัท รักษาความปลอดภัย อีสเทิร์น แมนเนจเม้นท์ จำกัด</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* กำหนดค่าสีหลักของบริษัท: น้ำเงินเข้ม (#0b1d3a) และ ขาว */
+        :root {
+            --primary-color: #0b1d3a;
+            --secondary-color: #ffffff;
+            --accent-color: #f1c40f; /* สีเหลืองทองตัดจากโลโก้ */
+            --bg-light: #f4f6f9;
+            --text-dark: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Sarabun', sans-serif;
+        }
+
+        body {
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* ส่วนหัวและเมนู */
+        header {
+            background-color: var(--secondary-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 60px; /* ขนาดโลโก้ */
+            width: auto;
+        }
+
+        .company-name {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        /* ส่วนแบนเนอร์หลัก (Hero Section) */
+        .hero {
+            background-linear-gradient: rgba(11, 29, 58, 0.85), rgba(11, 29, 58, 0.95);
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            border: 2px solid var(--accent-color);
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 5px;
+        }
+
+        /* ส่วนเนื้อหาหลัก */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+        }
+
+        /* เกี่ยวกับเรา */
+        .about-section {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.1rem;
+        }
+
+        /* บล็อกบริการ (Services Grid) */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 5px solid var(--primary-color);
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* ส่วนติดต่อเรา */
+        .contact-section {
+            background-color: var(--bg-light);
+            padding: 60px 20px;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--secondary-color);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-item {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: var(--primary-color);
+            min-width: 100px;
+        }
+
+        /* ส่วนท้ายเว็บ (Footer) */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* รองรับหน้าจอมือถือ */
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; text-align: center; gap: 10px; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo-area">
+                <img src="logo.jpg" alt="โลโก้ บ.รักษาความปลอดภัย อีสเทิร์น แมนเนจเม้นท์ จำกัด" class="logo-img">
+                <span class="company-name">บ.รักษาความปลอดภัย อีสเทิร์น แมนเนจเม้นท์ จำกัด</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>บริษัท รักษาความปลอดภัย อีสเทิร์น แมนเนจเม้นท์ จำกัด</h1>
+        <p>เข้มแข็ง มีวินัย ใส่ใจบริการ</p>
+    </section>
+
+    <main class="container">
+        <section class="about-section">
+            <h2 class="section-title">เกี่ยวกับเรา</h2>
+            <p>บริษัท รักษาความปลอดภัย อีสเทิร์น แมนเนจเม้นท์ จำกัด (ESM) มุ่งมั่นให้บริการรักษาความปลอดภัยระดับมืออาชีพ ด้วยบุคลากรที่ผ่านการฝึกอบรมอย่างเข้มงวด มีระเบียบวินัยสูง และพร้อมส่งมอบบริการที่ใส่ใจเพื่อความปลอดภัยสูงสุดในชีวิตและทรัพย์สินของลูกค้าทุกท่าน</p>
+        </section>
+
+        <section>
+            <h2 class="section-title">บริการของเรา</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>1. บริการเจ้าหน้าที่รักษาความปลอดภัย (รปภ.)</h3>
+                    <p>ให้บริการจัดส่งเจ้าหน้าที่ รปภ. ประจำการสำหรับหมู่บ้านจัดสรร, คอนโดมิเนียม, โรงงานอุตสาหกรรม และอาคารสำนักงาน ตรวจตราเข้มงวดตลอด 24 ชั่วโมง</p>
+                </div>
+                <div class="service-card">
+                    <h3>2. ระบบรักษาความปลอดภัยอัจฉริยะ</h3>
+                    <p>บริการออกแบบและวางระบบกล้องวงจรปิด (CCTV) รวมถึงระบบควบคุมการเข้า-ออกอาคาร (Access Control) ด้วยเทคโนโลยีที่ทันสมัย</p>
+                </div>
+                <div class="service-card">
+                    <h3>3. งานรักษาความปลอดภัยงานอีเว้นท์</h3>
+                    <p>ดูแลความสงบเรียบร้อย การคัดกรองบุคคล และการจัดการจราจร สำหรับงานจัดแสดงสินค้า งานคอนเสิร์ต และกิจกรรมพิเศษทุกรูปแบบ</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="contact-section">
+        <h2 class="section-title">ติดต่อเรา</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <span class="contact-label">บริษัท:</span>
+                <span>บริษัท รักษาความปลอดภัย อีสเทิร์น แมนเนจเม้นท์ จำกัด</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">ที่อยู่:</span>
+                <span>[141/36 หมู่ที่11 ตำบล หนองปรือ อำเภอบางละมุง จังหวัดชลบุรี]</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">เบอร์โทรศัพท์:</span>
+                <span>[033-123-854]</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">อีเมล:</span>
+                <span>[eastern0870230988@gmail.com]</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">เวลาทำการ:</span>
+                <span>เปิดบริการดูแลความปลอดภัยตลอด 24 ชั่วโมง</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 บริษัท รักษาความปลอดภัย อีสเทิร์น แมนเนจเม้นท์ จำกัด. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
